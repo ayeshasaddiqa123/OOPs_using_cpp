@@ -135,3 +135,71 @@ int main ()               // main function from where execution starts
    return 0; //return 0 to operating system
 }
 ----------------------------------------------------------------------------------
+
+
+
+// program 4
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+
+class book         // class declaration
+{
+	  private:    //access specifier
+	  	j
+	  	int book_id;
+	  	int pages;
+	  	float book_price;
+	  	
+	  public:   //  access specifier
+	  	
+	  	void get()
+	  	{
+	  		cout<<"Enter book id :";
+	  		cin>>book_id;
+	  		cout<<"Enter book pages :";
+	  		cin>>pages;
+	  		cout<<"Enter book price :";
+	  		cin>>book_price;
+		  }
+		  
+		  
+		 void show()
+		 {
+		 	cout<<" book id is:"<<book_id<<endl;
+		 	cout<<" book pages are:"<<pages<<endl;
+		 	cout<<" book price is:"<<book_price<<endl;
+
+         }
+         
+        void set(int id,int pg,float pr)
+		{
+			book_id=id;
+			pages=pg;
+			book_price=pr;
+		 } 
+		 
+		 
+		 float get_price()
+		 {
+		 	return  book_price;
+		 }
+         
+};
+int main ()               // main function from where execution starts
+{
+	book b1,b2;
+	b1.get();
+	b2.set(2,320,120.45);
+	cout<<"\n The most expensive book is:";
+	if(b1.get_price()>b2.get_price())
+	  b1.show();
+	  
+	 else
+	  b2.show(); 
+	
+   return 0; //return 0 to operating system
+}
+
+
+---------------------------------------------------------------------------------
