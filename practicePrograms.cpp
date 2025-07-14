@@ -203,3 +203,54 @@ int main ()               // main function from where execution starts
 
 
 ---------------------------------------------------------------------------------
+
+
+// program 5
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class student 
+{
+	private:    // access specifier
+	    int rollno;
+	  	char  grade;
+	  	string name;
+	  	
+	  	
+	public:         // access specifier
+	  // use setters
+	      void setrollno(int n)
+	      {
+	      	rollno=n;
+		  }
+		  
+		  void setgrade( char c)
+		  {
+		  	grade=c;
+		  }
+		  
+	      void setname(string a) 
+		  {
+		  	
+		  	name=a;
+		  }	
+			
+			
+			void display() // function to display student details
+			{
+				cout<<"Roll no is :"<<rollno<<endl;
+				cout<<"Grade is :"<<grade<<endl;
+				cout<<"Name is :"<<name<<endl;
+					  }	  	
+};
+int main ()               // main function from where execution starts
+{
+	student s;
+   s.setname("Ayesha");
+   s.setrollno(01);
+   s.setgrade('A');
+   s.display();
+	
+   return 0; //return 0 to operating system
+}
+
