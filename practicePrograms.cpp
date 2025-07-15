@@ -254,3 +254,41 @@ int main ()               // main function from where execution starts
    return 0; //return 0 to operating system
 }
 
+------------------------------------------------------------------------
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class hello 
+{
+	private:
+		int n;
+		
+	public:
+		hello()        // constructor
+		{
+			cout<<"object created......"<<endl;
+			}
+			
+	void setn(int n)
+		{
+		this ->	n=n;    // this pointer is the sddress of current object
+		}
+		int getn()
+		{
+			return n;
+		}
+				
+};
+
+int main ()               // main function from where execution starts
+{
+	hello x,y,z;
+	x.setn(100);
+	cout<<"The value of n is :"<<x.getn();
+	
+	
+	
+	
+   return 0; //return 0 to operating system
+}
+----------------------------------------------------
