@@ -256,6 +256,8 @@ int main ()               // main function from where execution starts
 
 ------------------------------------------------------------------------
 
+// program 6
+
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
 class hello 
@@ -291,4 +293,37 @@ int main ()               // main function from where execution starts
 	
    return 0; //return 0 to operating system
 }
-----------------------------------------------------
+---------------------------------------------------
+
+// program 7
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class num 
+{
+	private:
+		int n1;
+		int n2;
+		
+	public:
+		num()
+		{
+		n1=n2=10;
+			}
+			
+	void display()
+	
+		{
+			cout<<"The value of n1 is :"<<n1;
+			cout<<"\nThe value of n2 is :"<<n2;
+			cout<<"\nAverage is :"<<(n1+n2)/2;
+		}
+				
+};
+
+int main ()               // main function from where execution starts
+{
+	 num n;
+	 n.display();	
+   return 0; //return 0 to operating system
+}
