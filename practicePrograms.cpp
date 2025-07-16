@@ -327,3 +327,58 @@ int main ()               // main function from where execution starts
 	 n.display();	
    return 0; //return 0 to operating system
 }
+
+
+
+------------------------------------------------------------------------
+
+
+// program 8
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+	class book 
+	{
+	
+		int pages ;
+		int price ;
+		string title;
+		
+	public:
+	  
+	   void get()
+	   {
+	   	cout<<"Enter pages :";
+	   	cin>>pages;
+	   	cout<<"Enter price :";
+	   	cin>>price;
+	   	cout<<"Enter title :";
+	   	cin>>title;
+		   }
+		   
+		   
+		   void show()
+		   {
+		   	cout<<"Pages are :"<<pages<<endl;;
+		   	cout<<"Price is :"<<price<<endl;
+		   	cout<<"Title is :"<<title<<endl;
+			   }
+		};
+		
+		
+		
+int main ()               // main function from where execution starts
+{
+	book b1;
+	b1.get();
+	book b2=b1;
+	book b3=b1;
+	 
+	 cout<<"\nThe detail of book 1 is :"<<endl;
+	 b1.show();
+	  cout<<"\nThe detail of book 2 is :"<<endl;
+	  b2.show();
+	   cout<<"\nThe detail of book 3 is :"<<endl;
+	b3.show();
+   return 0; //return 0 to operating system
+}
