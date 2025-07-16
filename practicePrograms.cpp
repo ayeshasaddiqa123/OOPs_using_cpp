@@ -382,3 +382,61 @@ int main ()               // main function from where execution starts
 	b3.show();
    return 0; //return 0 to operating system
 }
+
+
+
+
+
+------------------------------------------------------------------------
+
+
+// program 9
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+	class student 
+	{
+	
+		int marks;
+		char grade;
+		
+	public:
+		
+		student (int m, char g)
+		{
+			marks = m;
+			grade = g;
+		}
+	  
+	   void show()
+	   {
+	   	cout<<"Marks :"<<marks<<endl;
+	   	
+	   	cout<<"Grade is  :"<<grade<<endl;
+	   	
+		   }
+		   
+
+		};
+		
+		
+		
+int main ()               // main function from where execution starts
+{
+	student s1(23,'A'),s2(25,'A');
+	 
+	 cout<<"\nThe detail of student is :"<<endl;
+	 s1.show();
+	  cout<<"\nThe detail of student 2 is :"<<endl;
+	  s2.show();
+	
+   return 0; //return 0 to operating system
+}
+
+
+
+
+------------------------------------------------------------------------
+
+
+// program 10
