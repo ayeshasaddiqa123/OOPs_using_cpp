@@ -440,3 +440,98 @@ int main ()               // main function from where execution starts
 
 
 // program 10
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Person
+{
+	string name;
+	int age;
+	
+public:
+	void setValues(string n, int a)
+	{
+		name=n;
+		age=a;
+	}
+	
+	void copied(const Person &p)
+	{
+		name=p.name;
+		age=p.age;
+	}
+	
+    void display()
+	{
+		cout<<"\nName is :"<<name;
+		cout<<"\nAge is :"<<age;
+		}
+			
+};
+int main ()               // main function from where execution starts
+{
+	Person p1,p2;
+	p1.setValues("ali",23);
+	
+	cout<<"Before passing object:";
+	p1.display();
+	p2.display();
+	
+	p2.copied(p1);
+	
+	cout<<"After passing object :";
+	  p1.display();
+	  p2.display();
+	
+	
+	
+	
+	
+   return 0; //return 0 to operating system
+}
+
+
+
+
+----------------------------------------
+
+
+program 11
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Person
+{
+	private:
+		int age;
+		string name;
+	
+	public:
+		 Person()
+		{
+			age=20;
+			name="Ayesha";
+		}
+		
+		 Person(int a, string n)
+		{
+			age=a;
+			name=n;
+		}
+		
+		
+	void display()
+	{
+		cout<<"\n The age is :"<<age;
+		cout<<"\n The name is :"<<name;
+		}	
+};
+int main ()               // main function from where execution starts
+{
+	Person p1;
+ Person	p2(24,"ali");
+	p1.display();
+	p2.display();
+   return 0; //return 0 to operating system
+}
+
