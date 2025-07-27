@@ -535,3 +535,49 @@ int main ()               // main function from where execution starts
    return 0; //return 0 to operating system
 }
 
+-----------------------------------------------------------------------------------
+// program 12
+
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+class TV {
+    private:
+        char Brand_Name[20];
+        char model[10];
+        float retail_price;
+    public:
+        TV(char brand[], char mod[], float price);
+        void display();
+        void change(char brand[], char mod[], float price);
+};
+
+TV::TV(char brand[], char mod[], float price) {
+    strcpy(Brand_Name, brand);
+    strcpy(model, mod);
+    retail_price = price;
+}
+
+void TV::change(char brand[], char mod[], float price) {
+    strcpy(Brand_Name, brand);
+    strcpy(model, mod);
+    retail_price = price;
+}
+
+void TV::display() {
+    cout << "\nBrand is :" << Brand_Name;
+    cout << "\nModel is :" << model;
+    cout << "\nPrice is :" << retail_price;
+}
+
+int main() {
+    TV test("Honda", "hdtv", 2505000);
+    test.display();
+    test.change("Tshiba", "LEd", 303333);
+    test.display();
+    return 0;
+}
+-----------------------------------------------------------------------------------
+
