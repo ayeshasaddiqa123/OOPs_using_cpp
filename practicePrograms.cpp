@@ -536,7 +536,7 @@ int main ()               // main function from where execution starts
 }
 
 -----------------------------------------------------------------------------------
-// program 12
+// program 12    
 
 
 #include<iostream>
@@ -581,3 +581,90 @@ int main() {
 }
 -----------------------------------------------------------------------------------
 
+ 
+// program 13    Write a program to demonstrate the use of copy constructor
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class student
+{
+	private:
+		int age;
+		int roll;
+		
+	public:
+	    student(int a , int r)
+		{
+			age=a;
+			roll=r;
+			
+			}
+			
+			student(const student &s)
+		{
+		 this->	age=s.age;
+		this->	roll=s.roll;
+			
+			}	
+			
+			void display()
+			{
+				cout<<"\nAge is :"<<age;
+			cout<<"\nroll is :"<<roll;
+			}
+};
+int main ()               // main function from where execution starts
+{
+	student s1(24,1);
+	student s2(s1);
+	s1.display();
+		s2.display();
+   return 0; //return 0 to operating system
+}
+
+
+---------------------------------------------------------------------------------------------------------------
+
+// program 14   
+
+
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int age;
+
+public:
+    // Constructor
+    Student(string n, int a) {
+        name = n;
+        age = a;
+        cout << "Constructor called for " << name << endl;
+    }
+
+    // Function to display data
+    void display() {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+
+    // Destructor
+    ~Student() {
+        cout << "Destructor called for " << name << endl;
+    }
+};
+
+int main() {
+    // Creating object on heap
+    Student* s1 = new Student("Ali", 20);
+
+    // Using the object
+    s1->display();
+
+    // Deleting object to free memory
+    delete s1;
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
