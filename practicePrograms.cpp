@@ -668,3 +668,43 @@ int main() {
     return 0;
 }
 ---------------------------------------------------------------------------------------------------------------
+
+
+// program 15     describe use of pointers as a member of a class  shallow copy and deep copy
+
+shallow copy  is an issue that created when we allow compiler to create the copy constructor itself and deep copy is the solution to this issue. In shallow copy, the pointer in the copied object points to the same memory location as the original object, which can lead to issues like double deletion. In deep copy, a new memory location is allocated for the copied object, ensuring that each object has its own separate memory.
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class car
+{
+   private:	
+     int  *price;
+      
+    public:
+    	car( int value)
+    	{
+    		price = new int;
+    		*price=value;
+    		cout<<"\nPrice is "<<price;
+    		
+    		cout<<"\nH i am constructor ";
+		}
+		car(const car &obj)
+		{
+			price = new int;
+			*price=*(obj.price);
+		}
+		~ car()
+		{
+			delete price;
+			cout<<"\nHi";
+		}
+};
+int main ()               // main function from where execution starts
+{
+	car s1(100);
+	car s2(s1);
+   return 0; //return 0 to operating system
+}
