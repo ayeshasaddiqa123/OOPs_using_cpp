@@ -295,7 +295,7 @@ int main ()               // main function from where execution starts
 }
 ---------------------------------------------------
 
-// program 7
+// program 7   basic program to demonstrate the use of constructor
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -390,7 +390,7 @@ int main ()               // main function from where execution starts
 ------------------------------------------------------------------------
 
 
-// program 9
+// program 9    
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -439,7 +439,7 @@ int main ()               // main function from where execution starts
 ------------------------------------------------------------------------
 
 
-// program 10
+// program 10      // write a program to demonstrate the use of copy constructor
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -495,8 +495,8 @@ int main ()               // main function from where execution starts
 
 ----------------------------------------
 
-
-program 11
+      
+program 11     // parameterized and unparameterized constructors
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -536,7 +536,7 @@ int main ()               // main function from where execution starts
 }
 
 -----------------------------------------------------------------------------------
-// program 12    
+// program 12    wrrite a program in which you create a class TV with constructor and member function to change the values of its data members and display them and declare functions outside the class.
 
 
 #include<iostream>
@@ -625,7 +625,7 @@ int main ()               // main function from where execution starts
 
 ---------------------------------------------------------------------------------------------------------------
 
-// program 14   
+// program 14    create a class with constructor and destructor and create an object of that class on heap
 
 
 #include <iostream>
@@ -707,4 +707,74 @@ int main ()               // main function from where execution starts
 	car s1(100);
 	car s2(s1);
    return 0; //return 0 to operating system
+}
+-------------------------------------------------------------------------------------------------------
+
+// program 16
+
+#include<iostream>
+using namespace std;
+class Teacher {
+    private:
+        int id;
+        string name;
+        int *age;
+        double salary;
+    public:
+      Teacher(int i, string n, int a, double s) 
+      {
+      	id=i;
+      	name=n;
+      	age=new int;
+      	*age=a;
+      	salary=s;
+	  }
+	        
+ // Copy constructor
+        Teacher(const Teacher &t) {
+            id = t.id;
+            name = t.name;
+            age=new int;
+            *age=*(t.age);
+            salary = t.salary;
+            cout << "Copy constructor called" << endl;
+        }
+        void setid(int id) {
+            this->id = id;
+        }
+
+        double getSalary() const {
+            return salary;
+        }
+
+
+        // Destructor
+        ~Teacher() {
+        	delete age;
+            cout << "Destructor called for " << name << endl;
+        }
+
+        display() const {
+            cout << "ID: " << id << ", Name: " << name << ", Age: " << age << ", Salary: " << salary << endl;
+        }
+    };
+
+int main()
+{
+    Teacher t1(1, "John Doe", 35, 50000.0);
+    Teacher t2(t1); // Copy constructor
+
+    t2.setid(2); // Change ID of copied object
+    cout<<"Record of 1st teacher: "<<endl;
+    t1.display(); // Display original object
+    cout<<"Record of 2nd teacher: "<<endl;
+    t2.display(); // Display copied object
+
+    // to compare the teaher's salary and print the largest one
+    if (t1.getSalary() > t2.getSalary()) {
+        cout << "Teacher 1 has a higher salary: " << t1.getSalary() << endl;
+    } else {
+        cout << "Teacher 2 has a higher salary: " << t2.getSalary() << endl;
+    }
+
 }
