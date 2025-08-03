@@ -687,7 +687,7 @@ class car
     	{
     		price = new int;
     		*price=value;
-    		cout<<"\nPrice is "<<price;
+    		cout<<"\nPrice is "<<*price;
     		
     		cout<<"\nH i am constructor ";
 		}
@@ -755,7 +755,7 @@ class Teacher {
         }
 
         display() const {
-            cout << "ID: " << id << ", Name: " << name << ", Age: " << age << ", Salary: " << salary << endl;
+            cout << "ID: " << id << ", Name: " << name << ", Age: " << *age << ", Salary: " << salary << endl;
         }
     };
 
@@ -778,3 +778,62 @@ int main()
     }
 
 }
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+// program 17    describe the returning of objects
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Travel
+{
+	private:
+		int km;
+		int hrs;
+	
+	public:
+	 	Travel()
+		 {
+		 	km=0;
+		 	hrs=0;
+			 }	
+		
+		get()
+		{
+			cout<<"Enter kilometers :"<<km;
+			cin>>km;
+			cout<<"Enter hours :"<<hrs;
+			cin>>hrs;
+			}	
+		show()
+		{
+			cout<<"Kilometers traveled :"<<km<<endl;
+			cout<<"hours spent :"<<hrs<<endl;
+			}	
+		 Travel add( Travel p)
+		{
+			Travel t;
+			t.km=km+p.km;
+			t.hrs=hrs+p.km;
+			return t;
+			}	
+	};
+int main ()               // main function from where execution starts
+{
+	Travel t1,t2,r;
+	
+	
+	t1.get();
+	t1.show();
+	t2.get();
+	t2.show();
+	
+	r=t1.add(t2);
+	cout<<"Total travelling is :"<<endl;
+	r.show();
+   return 0; //return 0 to operating system
+}
+------------------------------------------------------------------------------------------------------------------------
