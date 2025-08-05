@@ -837,3 +837,59 @@ int main ()               // main function from where execution starts
    return 0; //return 0 to operating system
 }
 ------------------------------------------------------------------------------------------------------------------------
+
+
+// program 18  use of character pointer
+
+#include <iostream>
+#include <cstring> // strcpy ??? strlen 
+using namespace std;
+
+class Book {
+private:
+    char* name; // Book name  character pointer
+
+public:
+    // Constructor
+    Book() {
+        name =" NULL";
+    }
+
+    // Setter function
+    void setName(const char* newName) {
+       
+
+        name = new char[strlen(newName) + 1];
+        strcpy(name, newName);
+    }
+
+    // Getter function
+    const char* getname() {
+        return name;
+    }
+
+    // Display function
+    void display() {
+        cout << "Book Name: " << name << endl;
+    }
+    Book(const Book &b)
+    {
+    	name=b.name;
+	}
+
+    // Destructor
+    ~Book() {
+        delete name; // Memory free 
+    }
+};
+
+// Main function
+int main() {
+    Book b1; 
+    
+    b1.setName("C++ Basics");
+    Book b2(b1);
+    b1.display(); 
+b2.display();
+    return 0;
+}
