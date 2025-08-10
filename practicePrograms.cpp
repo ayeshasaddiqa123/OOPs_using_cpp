@@ -893,3 +893,115 @@ int main() {
 b2.display();
     return 0;
 }
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class  kitchen
+{
+	private:
+		int spoons;
+		
+	public:
+	
+	void in()
+	{
+		cout<<"Enter no of spoons:";
+		cin>>spoons;
+		}
+		
+	void out()
+	{
+		cout<<"Number of spoons are :"<<spoons;
+			}		
+};
+int main ()               // main function from where execution starts
+{
+	kitchen k1;
+	k1.in();
+	k1.out();
+   return 0; //return 0 to operating 
+   
+}
+
+
+
+
+   #include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Marks
+{
+	private:
+		int marks1;		
+		int marks2;
+		int marks3;	
+	public:
+		void in()
+		{
+			cout<<"Enter marks of three subjects :";
+			cin>>marks1>>marks2>>marks3;
+		}
+		
+		int sum()
+		{
+			int sum=marks1+marks2+marks3;
+			return sum;
+		}
+		
+		float avg()
+		{
+			float average=(marks1+marks2+marks3)/3.0;
+			return average;
+		}
+};
+
+int main ()               // main function from where execution starts
+{
+	Marks m;
+	m.in();
+cout<<"Sum is :"<<m.sum();
+cout<<"\nAverage is :"<<m.avg();
+   return 0; //return 0 to operating system
+}
+
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class  circle
+{
+	private:
+		float r;
+
+
+	public:
+	void getradius(float a)
+	{
+		r=a;
+	}
+	
+	void radius()
+	{
+		float area=3.14*r*r;
+		cout<<"Area is :"<<area;
+	}
+	
+	void circum()
+	{
+		float circum=2*3.14*r;
+		cout<<"\nCircumference is :"<<circum;
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	circle c;
+	c.getradius(4.3);
+	c.radius();
+	c.circum();
+   return 0; //return 0 to operating system
+}
