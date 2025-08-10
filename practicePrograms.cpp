@@ -1005,3 +1005,122 @@ int main ()               // main function from where execution starts
 	c.circum();
    return 0; //return 0 to operating system
 }
+
+
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Book
+{
+	private:
+		int bookid,pages;
+		float price;
+
+
+	public:
+	
+	void get()
+	{
+		cout<<"Enter book id : ";
+		cin>>bookid;
+		cout<<"Enter book pages : ";
+		cin>>pages;
+		cout<<"Enter book price : ";
+		cin>>price;
+
+	}
+	void show()
+	{
+		cout<<"Book id is:"<<bookid<<endl;
+		cout<<"Book  pages is:"<<pages<<endl;
+		cout<<"Book price is:"<<price<<endl;
+
+	}
+	
+	void set(int i,int p,float pr)
+	{
+		bookid=i;
+		pages=p;
+		price=pr;
+	}
+	
+	float getprice()
+	{
+		return price;
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	Book b1,b2;
+	b1.get();
+	b2.set(20,34,500.0);
+	
+	cout<<"The detail of most costly book is:\n";
+	if(b1.getprice()>b2.getprice())
+	 b1.show();
+	 else
+	 b2.show();
+   return 0; //return 0 to operating system
+}
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class array
+{
+	private:
+		int arr[5];
+
+
+	public:
+		void fill();
+		void display();
+		void max();
+		int min();
+};
+	
+	void array::fill()
+	{
+		cout<<"Enter numbers in  array :";
+		
+		for (int i=0;i<5;i++)
+		cin>>arr[i];
+	}
+	
+	void array::display ()
+	{
+		cout<<"The numbers in array are :";
+		for (int i=0;i<5;i++)
+		cout<<arr[i]<<"\t";
+	}
+	void array:: max()
+	{
+		int max=0;
+		arr[0]=max;
+		for (int i=0;i<5;i++)
+		if(arr[i]>max)
+		max=arr[i];
+		cout<<"\nMax number is :"<<max;
+	}
+	int array:: min()
+	{
+		int min=0;
+		arr[0]=min;
+			for (int i=0;i<5;i++)
+		if(arr[i]<min)
+		min=arr[i];
+		return min;
+	}
+
+
+int main ()               // main function from where execution starts
+{
+	array a;
+	
+	a.fill();
+	a.max();
+	cout<<"\n";
+	a.display();
+	cout<<"\nThe min value is :"<<a.min();
+   return 0; //return 0 to operating system
+}
