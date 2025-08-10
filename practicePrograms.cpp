@@ -1124,3 +1124,210 @@ int main ()               // main function from where execution starts
 	cout<<"\nThe min value is :"<<a.min();
    return 0; //return 0 to operating system
 }
+
+
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class  cons
+{
+	private:
+           int a;
+           int b;
+
+	public:
+	
+	cons()
+	{
+		a=100;
+		b=100;
+	}
+	
+	void avg()
+	{
+		int average= (a+b)/2.0;
+		cout<<"\nAverage is :"<<average;
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	cons c1;
+	c1.avg();
+	cons c2;
+	c2.avg();
+
+   cons *s=  new  cons();
+   s->avg();
+    delete s;
+   
+	
+	
+   return 0; //return 0 to operating system
+}
+
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class student
+{
+	private:
+		int marks;
+		char grade;
+
+
+	public:
+	student(int m,char g)
+	{
+		marks=m;
+		grade=g;
+	}
+	// default
+	student()
+	{
+	marks=0;
+	grade=' ';	
+	}
+	
+	void display()
+	{
+		cout<<"Marks  are :"<<marks<<endl;
+		cout<<"Grade is :"<<grade<<endl;
+	}
+};
+
+
+
+int main ()               // main function from where execution starts
+{
+	student s1(100,'A');
+	s1.display();
+	student s2;
+	s2.display();
+   return 0; //return 0 to operating system
+}
+
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Book 
+{
+	private:
+		int pages;
+		float price;
+		string title;
+
+
+	public:
+	
+	void get()
+	{
+		cout<<"Entr pages , price and title of book :";
+		cin>>pages>>price>>title;
+	}
+	void show()
+	{
+		cout<<"The pages ,price  and title of book is : "<<pages<<":"<<price<<":"<<title<<endl;
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	Book b1,b2;
+	
+	b1.get();
+	b1.show();
+	b2.get();
+	b2.show();
+	Book b3(b2);
+    b3.show();
+    
+   return 0; //return 0 to operating system
+}
+
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class  student
+{
+	private:
+		int roll;
+		char grade;
+		float *cgpa;
+	public:	
+	student(int r,char g,float f)
+	{
+		roll=r;
+		grade=g;
+		cgpa=new float;
+		*cgpa=f;	
+	}
+	student(student &s)
+	{
+		roll=s.roll;
+		grade=s.grade;
+		cgpa=new float;
+		*cgpa=*s.cgpa;
+	}
+	void display()
+	{
+		cout<<"Roll is :"<<roll<<endl;
+		cout<<"Grade is :"<<grade<<endl;
+		cout<<"cgpa :"<<*cgpa<<endl;
+	}
+	~student()
+	{
+		delete cgpa;
+		cout<<"V"<<endl;
+	}
+};
+int main ()               // main function from where execution starts
+{
+   student s1(1,'a',4.0);
+   s1.display();
+   student s2(s1);
+  s2.display();
+
+   	
+   return 0; //return 0 to operating system
+}
+
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class gadget
+{
+	private:
+		int price;
+
+
+	public:
+	
+     
+	gadget(int p):price( p)
+	{
+		
+	}
+	int getprice() const
+	{
+		return price;
+	}
+	void display() const
+	{
+		cout<<"price is :"<<price<<endl;
+	}
+};
+
+int main ()               // main function from where execution starts
+{ 
+const gadget g1(100);
+     g1.display();
+	
+	cout<<"Price is :"<<g1.getprice();
+   return 0; //return 0 to operating system
+}
