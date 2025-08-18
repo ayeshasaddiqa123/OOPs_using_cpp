@@ -1331,3 +1331,93 @@ const gadget g1(100);
 	cout<<"Price is :"<<g1.getprice();
    return 0; //return 0 to operating system
 }
+
+--------------------------------------------------------------------------------------------
+
+
+
+// program 19    write a program to demonstrate the use of association between classes one to one relationship no dependent
+one object interacts with another
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Student
+{
+	private:
+		string name;
+		
+	public:
+	
+       Student (string n):name(n)
+	{
+	}
+	string getName()
+	{
+		return name;
+	}
+};
+class Teacher
+{
+	private:
+ 	 string name;
+ 	 public:
+
+	Teacher(string n):name(n)
+	{
+	}
+	void teaches(Student s)
+	{
+		cout<<name<<" teaches "<<s.getName();
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	Student s1("Ali");
+	Teacher t1("Ahmad");
+	
+	t1.teaches(s1);
+   return 0; //return 0 to operating system
+}
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+
+// program 20    write a program to demonstrate the use of composition between classes one to one relationship dependent
+	one object is part of another object
+	permant dependency
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Engine
+{
+	
+	public:
+	
+	void start()
+	{
+		cout<<"Engine is started ."<<endl;
+	}
+};
+class Car
+{
+     Engine engine;
+     public:
+     	
+			void drive()
+	{
+		engine.start();
+		cout<<"Car is moving"<<endl;
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	Car c;
+	c.drive();
+   return 0; //return 0 to operating system
+}
