@@ -1421,3 +1421,80 @@ int main ()               // main function from where execution starts
 	c.drive();
    return 0; //return 0 to operating system
 }
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+// program 21    write a program to demonstrate the use of aggregation between classes one to one relationship dependent
+	one object is part of another object
+	temporary dependency
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class student
+{
+	public:
+		string name;
+	
+	student (string n):name(n)
+	{
+	}
+};
+class Department
+{
+	private:
+		student *st;
+	public:	
+
+	Department(student* s1)
+	{
+		st=s1;
+		
+	}
+	void display()
+	{
+		cout<<st->name<<" is in department";
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	student s2("Ali");
+	Department cs(&s2);
+	cs.display();
+   return 0; //return 0 to operating system
+}
+
+
+
+
+-----------------------------------------------------------------------------------------------
+
+// program 22    write a program to demonstrate the use of friend function
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class box
+{
+	private:
+		float length;
+
+
+	public:
+	
+	box(float l):length(l)
+	{
+	}
+	friend void display(box b);
+};
+void display( box b)
+{
+	cout<<b.length;
+}
+
+int main ()               // main function from where execution starts
+{
+	box b1(5.0);
+	display(b1);
+   return 0; //return 0 to operating system
+}
