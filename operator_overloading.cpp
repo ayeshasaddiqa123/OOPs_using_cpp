@@ -171,3 +171,115 @@ int main ()               // main function from where execution starts
 	z.show();
    return 0; //return 0 to operating system
 }
+-------------------------------------------------------------------------
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+#include<string.h>
+using namespace std;     // use the stanadard namespace
+class String
+{
+	private:
+		char str[50];
+
+
+	public:
+	
+	String()
+	{
+		str[0]='\0';
+	}
+	void show()
+	{
+		cout<<str<<endl;
+	}
+	void in()
+	{
+		cout<<"Enter string :";
+		gets(str);
+	}
+	String operator +(String p)
+	{
+		String temp;
+		strcpy(temp.str,str);
+		strcat(temp.str,p.str);
+		return temp;
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	String s1,s2,s3;
+	s1.in();
+	s2.in();
+	cout<<"Value in s1 :";
+	s1.show();
+	cout<<"\nValue in s2 :";
+	s2.show();
+	cout<<"\nValue in s3 :";
+	s3.show();
+	cout<<"\nThe value after concatinating :";
+	s3=s1+s2;
+	s3.show();
+	
+   return 0; //return 0 to operating system
+}
+
+
+------------------------------------------------------------------------------------------------------
+#include<iostream>     // include the iostream library (a preprocessor directive)
+#include<string.h>
+using namespace std;     // use the stanadard namespace
+class String
+{
+	private:
+		char str[50];
+
+
+	public:
+	
+	String()
+	{
+		str[0]='\0';
+	}
+	void show()
+	{
+		cout<<str<<endl;
+	}
+	void in()
+	{
+		cout<<"Enter string :";
+		gets(str);
+	}
+	int operator ==(String s)
+	{
+		if(strlen(s.str)==strlen(str))
+		return 1;
+		else 
+		 return 0;
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	String s1,s2;
+	s1.in();
+	s2.in();
+	cout<<"Value in s1 :";
+	s1.show();
+	cout<<"\nValue in s2 :";
+	s2.show();
+	cout<<"\nValue in s3 :";
+	if (s1==s2)
+	cout<<"Both strings are equal";
+	else
+		cout<<"Both strings are equal";
+
+
+	
+	
+   return 0; //return 0 to operating system
+}
+
+-------------------------------------------------------------------------------
+
+
