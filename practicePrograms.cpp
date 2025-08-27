@@ -672,7 +672,7 @@ int main() {
 
 // program 15     describe use of pointers as a member of a class  shallow copy and deep copy
 
-shallow copy  is an issue that created when we allow compiler to create the copy constructor itself and deep copy is the solution to this issue. In shallow copy, the pointer in the copied object points to the same memory location as the original object, which can lead to issues like double deletion. In deep copy, a new memory location is allocated for the copied object, ensuring that each object has its own separate memory.
+//shallow copy  is an issue that created when we allow compiler to create the copy constructor itself and deep copy is the solution to this issue. In shallow copy, the pointer in the copied object points to the same memory location as the original object, which can lead to issues like double deletion. In deep copy, a new memory location is allocated for the copied object, ensuring that each object has its own separate memory.dangling pointer issue also arises in shallow copy .It occurs when an object is deleted or goes out of scope, leaving a pointer in another object pointing to a memory location that is no longer valid.
 
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
@@ -930,7 +930,7 @@ int main ()               // main function from where execution starts
 
 
 
-
+--------------------------------------------------------------------------------------------------------
    #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
 class Marks
@@ -968,7 +968,7 @@ cout<<"\nAverage is :"<<m.avg();
    return 0; //return 0 to operating system
 }
 
-
+--------------------------------------------------------------------------------------------------------
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -1007,7 +1007,7 @@ int main ()               // main function from where execution starts
 }
 
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -1058,12 +1058,14 @@ int main ()               // main function from where execution starts
 	b2.set(20,34,500.0);
 	
 	cout<<"The detail of most costly book is:\n";
-	if(b1.getprice()>b2.getprice())
+	if(b1.getprice()>b2.getprice())  //compares and prints the most costly book
 	 b1.show();
 	 else
 	 b2.show();
    return 0; //return 0 to operating system
 }
+
+-----------------------------------------------------------------------------------------------------------------------
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
 class array
@@ -1167,6 +1169,7 @@ int main ()               // main function from where execution starts
    return 0; //return 0 to operating system
 }
 
+---------------------------------------------------------------------------------------------------------
 
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
@@ -1209,7 +1212,7 @@ int main ()               // main function from where execution starts
    return 0; //return 0 to operating system
 }
 
-
+--------------------------------------------------------------------------------------------------------
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -1246,9 +1249,10 @@ int main ()               // main function from where execution starts
     b3.show();
     
    return 0; //return 0 to operating system
+
 }
-
-
+-------------------------------------------------------------------------------------------------------
+// using deep copy to solve the issue of shallow copy this issue arises when we have pointer as a data member of class
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -1295,8 +1299,8 @@ int main ()               // main function from where execution starts
    	
    return 0; //return 0 to operating system
 }
-
-
+------------------------------------------------------------------------------------------------------------------------------
+// demnstrates the use of const keyword
 
 #include<iostream>     // include the iostream library (a preprocessor directive)
 using namespace std;     // use the stanadard namespace
@@ -1308,7 +1312,8 @@ class gadget
 
 	public:
 	
-     
+     //we cannot change the value of data member in constant function and cannot use setters in constant function
+
 	gadget(int p):price( p)
 	{
 		
@@ -1498,4 +1503,4 @@ int main ()               // main function from where execution starts
 	display(b1);
    return 0; //return 0 to operating system
 }
-----
+-----------------------------------------------------------------------------------------------~
