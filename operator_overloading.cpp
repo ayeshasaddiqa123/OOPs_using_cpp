@@ -10,15 +10,15 @@ class Count
 
 	public:
 	
-	Count()
+	Count()      //constructor to initialize n to 0
 	{
 		n=0;
 	}
-	void show()
+	void show()  //function to display value of n
 	{
 		cout<<"n="<<n<<endl;
 	}
-	void operator ++()
+	void operator ++()  //overloading increment operator
 	{
 		n=n+1;
 	}
@@ -28,7 +28,7 @@ int main ()               // main function from where execution starts
 {
 	Count obj;
 	obj.show();
-	++obj;
+	++obj;         //incrementing value of n by 1
 	obj.show();
    return 0; //return 0 to operating system
 }
@@ -70,7 +70,7 @@ int main ()               // main function from where execution starts
 	Count x,y;
 	x.show();
 	y.show();
-	y=++x;
+	y=++x;			//assigning the incremented value of x to y
 	x.show();
 	y.show();
 	
@@ -99,7 +99,7 @@ class Count
 	{
 		cout<<"n="<<n<<endl;
 	}
-	Count operator ++(int)
+	Count operator ++(int)  //postfix increment operator is overloaded by passing an int argument
 	{
 		Count temp;
 		n=n+1;
@@ -173,6 +173,8 @@ int main ()               // main function from where execution starts
 }
 -------------------------------------------------------------------------
 
+//   concatenation of two strings using operator overloading
+
 #include<iostream>     // include the iostream library (a preprocessor directive)
 #include<string.h>
 using namespace std;     // use the stanadard namespace
@@ -188,16 +190,16 @@ class String
 	{
 		str[0]='\0';
 	}
-	void show()
+	void show()			//function to display string
 	{
 		cout<<str<<endl;
 	}
-	void in()
+	void in()		//function to input string
 	{
 		cout<<"Enter string :";
 		gets(str);
 	}
-	String operator +(String p)
+	String operator +(String p)  //overloading + operator to concatenate two strings
 	{
 		String temp;
 		strcpy(temp.str,str);
@@ -241,16 +243,16 @@ class String
 	{
 		str[0]='\0';
 	}
-	void show()
+	void show()		//function to display string
 	{
 		cout<<str<<endl;
 	}
-	void in()
+	void in()		//function to input string
 	{
 		cout<<"Enter string :";
 		gets(str);
 	}
-	int operator ==(String s)
+	int operator ==(String s) 	//overloading equality operator
 	{
 		if(strlen(s.str)==strlen(str))
 		return 1;
@@ -269,7 +271,7 @@ int main ()               // main function from where execution starts
 	cout<<"\nValue in s2 :";
 	s2.show();
 	cout<<"\nValue in s3 :";
-	if (s1==s2)
+	if (s1==s2)       //comparing two strings
 	cout<<"Both strings are equal";
 	else
 		cout<<"Both strings are equal";
