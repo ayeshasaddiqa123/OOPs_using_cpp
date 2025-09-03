@@ -1,0 +1,48 @@
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Move
+{ 
+	protected:
+		int position;
+
+	public:
+		
+	
+	     Move	()
+	{
+		position=0;
+	}
+	void increment()
+	{
+		position++;
+	}
+	void show()
+	{
+		cout<<"Position is :"<<position<<endl;
+	}
+};
+class Move2:public Move
+{
+	public:
+		void backward()
+		{
+			position--;
+		}
+};
+
+
+int main ()               // main function from where execution starts
+{
+	Move2 m;
+	m.increment();
+	m.show();
+	m.backward();
+	m.show();
+	
+   return 0; //return 0 to operating system
+}
+
+
+-------------------------------------------------------------------------------------------------------
+
+
