@@ -1,3 +1,37 @@
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Rectangle
+{
+	private:
+		float h;
+		float w;
+
+
+	public:
+	
+	Rectangle(float he)
+	{
+		h=he;
+	}
+	Rectangle()
+	{
+		w=0;
+	}
+	void display()
+	
+	{
+		cout<<"Height is:"<<h<<endl;
+		cout<<"Width is :"<<w;
+	}
+};
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+int main ()               // main function from where execution starts
+{
+	Rectangle s(0);
+	s.display();
+   return 0; //return 0 to operating system
+}
  
  //Overloading increment operator with user defined objects
 
