@@ -80,6 +80,7 @@ class Employee:public Person
 
 };
 
+
 int main ()               // main function from where execution starts
 {
 	Employee e;
@@ -88,5 +89,53 @@ int main ()               // main function from where execution starts
    return 0; //return 0 to operating system
 }
 
+-------------------------------------------------------------------------------------------------------
 
+
+virtual destructors
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Animal
+{
+
+	public:
+	
+	void show()
+	{
+		cout<<"Animal";
+	}
+	Animal	()
+	{
+		cout<<"\nAnimal constructor";
+	}
+virtual		~Animal	()
+	{
+		cout<<"\nAnimal destructor";
+	}
+};
+class Cat : public Animal
+{
+
+	public:
+	
+	void show()
+	{
+		cout<<"Cat";
+	}
+	Cat	()
+	{
+		cout<<"\ncat constructor";
+	}
+	~	Cat	()
+	{
+		cout<<"\ncat destructor";
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	Animal *ptr=new Cat();
+	delete ptr;
+   return 0; //return 0 to operating system
+}
 
