@@ -58,3 +58,79 @@ int main ()               // main function from where execution starts
 	
    return 0; //return 0 to operating system
 }
+
+----------------------------------------------------------------
+
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Vehicle
+{
+	protected:
+		int vehicleID;
+		string brand;
+		int days;
+
+
+	public:
+		virtual void rentalCost(int d)=0;	
+	  virtual	void rentalcost()=0;
+	
+};
+class Bike : public Vehicle
+{protected:
+		int CostPerHour=200;
+	     
+	public:
+		 void rentalCost(int d)
+		{
+			days=d;
+		}	
+	int rentalcost()
+	{
+		return days * CostPerHour;
+	}
+};
+
+
+
+
+class Car :protected Vehicle
+{
+	protected:
+		int costPerDay=300;
+
+
+	public:
+		 void rentalCost(int d);
+		 {
+		 	days=d;
+		 }
+	
+	int rental cost()
+	{
+		return days*costPerDay;
+	}
+
+};
+
+int main ()               // main function from where execution starts
+{
+	int da;
+
+	vehicle *ptr[0]=new Bike;
+	Vehicle *ptr[1]=new Car;
+	
+	
+	for(int i=0 ;i<=1;i++)
+	{
+		cout<<"Enter rental days :";
+		cin>>da;
+		ptr[i]->rentalCost(da);
+	cout<<"Rental Cost is :"<<ptr[i]->rentalcost();
+	}
+	delete ptr[0];
+	delete ptr[1];
+	
+   return 0; //return 0 to operating system
+}
