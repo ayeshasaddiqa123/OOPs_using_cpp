@@ -1504,3 +1504,73 @@ int main ()               // main function from where execution starts
    return 0; //return 0 to operating system
 }
 -----------------------------------------------------------------------------------------------~
+
+#include<iostream>     // include the iostream library (a preprocessor directive)
+using namespace std;     // use the stanadard namespace
+class Person
+{
+	private:
+		int id;
+		string name;
+		char address[50];
+    
+
+	public:
+		  Person() {
+      	id=0;
+      	name="\n";
+      	address[0]='\0';	
+	 }
+	 
+	
+     void Getinfo()
+	{
+		cout<<"Enter your id ";
+		cin>>id;
+		cout<<"Enter your name";
+		cin>>name;
+		cout<<"Enter your address";
+		gets(address);
+		
+		
+	}
+	void showinfo ()
+	{
+		cout<<"id is :"<<id<<"\nName is:"<<name<<"\nAddress is :"<<address;
+	}
+};
+class Student:public Person
+{
+	int rollno;
+	int marks;
+	public:
+		Student()
+		{
+		
+			rollno=marks=0;
+		}
+	void getEdu(){
+	cout<<"Enter roll no:";
+	cin>>rollno;
+	cout<<"Enter marks";
+	cin>>marks;
+	}
+	
+	void showEdu()
+	{
+		cout<<"Rollno is:"<<rollno<<"\nMarks are "<<marks;
+	}
+};
+
+int main ()               // main function from where execution starts
+{
+	
+	Student s;
+	s.	Getinfo();
+	s.showinfo();
+	s.getEdu();
+	s.showEdu();
+   return 0; //return 0 to operating system
+}
+
+
