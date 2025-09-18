@@ -1574,3 +1574,76 @@ int main ()               // main function from where execution starts
 }
 
 
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class Time {
+private:
+    int hours;
+    int minutes;
+    int seconds;
+
+public:
+    // Default constructor -> initialize to 0
+    Time() : hours(0), minutes(0), seconds(0) {}
+
+    // Parameterized constructor
+    Time(int h, int m, int s) {
+        hours = h;
+        minutes = m;
+        seconds = s;
+        normalize();
+    }
+
+    // Normalize so seconds and minutes are within 0-59
+    void normalize() {
+        if (seconds >= 60) {
+            minutes += seconds / 60;
+            seconds %= 60;
+        } else if (seconds < 0) {
+            int borrow = (abs(seconds) + 59) / 60;
+            minutes -= borrow;
+            seconds += borrow * 60;
+        }
+        if (minutes >= 60) {
+            hours += minutes / 60;
+            minutes %= 60;
+        } else if (minutes < 0) {
+            int borrow = (abs(minutes) + 59) / 60;
+            hours -= borrow;
+            minutes += borrow * 60;
+        }
+        // hours can grow beyond 24; if you want modulo 24, apply here.
+    }
+
+    // Display in HH:MM:SS format (two digits each)
+    void display() const {
+        cout << setw(2) << setfill('0') << hours << ":"
+             << setw(2) << setfill('0') << minutes << ":"
+             << setw(2) << setfill('0') << seconds << endl;
+        cout << setfill(' '); // reset
+    }
+
+    // Add two Time objects passed as arguments and put result into this object
+    void add(const Time &t1, const Time &t2) {
+        hours = t1.hours + t2.hours;
+        minutes = t1.minutes + t2.minutes;
+        seconds = t1.seconds + t2.seconds;
+        normalize();
+    }
+};
+
+// main to demonstrate
+int main() {
+    const Time t1(2, 45, 50);   // initialized (could be const)
+    const Time t2(1, 20, 15);   // initialized (const allowed)
+    Time t3;                    // not initialized explicitly (default -> 0)
+
+    t3.add(t1, t2);             // t3 = t1 + t2
+    cout << "Resulting time: ";
+    t3.display();               // prints 04:06:05
+
+    return 0;
+}
